@@ -116,6 +116,3 @@ SELECT  first_name,
         commission_pct,
         nvl(commission_pct,0), --null이면 0 표시
         nvl2(commission_pct,100,0) --null이 아니면 100 null이면 0
-FROM employees;
-
-SELECT * FROM employees;
