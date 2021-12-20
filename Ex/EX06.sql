@@ -117,7 +117,7 @@ SELECT  em.employee_id,
         ma.phone_number,
         ma.email
 FROM employees em, employees ma -- 매니저 테이블을 기존 테이블을 꺼내 써서 만듬--
-where em.manager_id = ma.employee_id; -- ma의 employee_id를 em의 manager_id로 변환
+where em.manager_id = ma.employee_id; -- ma의 employee_id를 em의 manager_id로 변환되서 ma의 값은 매니저 값만 표시됨
 
 
 --잘 못된 셀프 조인 다른의미를 가진 두값을 조인할때--
