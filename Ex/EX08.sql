@@ -186,4 +186,4 @@ from (select rownum rn,
             order by salary desc) ot     ----(1)
       ) ort   ----(2)
 where ort.rn >= 3   ----(3)
-and ort.rn <=7
+and ort.rn <=7 
