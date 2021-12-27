@@ -2,20 +2,20 @@
 commit;
 rollback;
 ------------------------------------------------------------------------------------------------------------------
---ㅇ시퀀스 보기
+--시퀀스 보기--
 select * from user_sequences;
---ㅇ시퀀스 삭제
+--시퀀스 삭제--
 drop sequence seq_author_id;
 drop sequence seq_book_id;
---ㅇ데이터 삭제
+--데이터 삭제--
 delete from author;
 delete from book;
---ㅇ테이블 삭제
+--테이블 삭제--
 drop table book;
 drop table author;
 -------------------------------------------------------------------------------------------------------------------
---실습문제
---1. book과 author 테이블 만들기
+--실습문제--
+--1. book과 author 테이블 만들기--
 create table author(
     author_id   number(10),
     author_name varchar2(100) not null,
@@ -32,7 +32,7 @@ create table book (
     primary key(book_id),
     constraint book_fk foreign key (author_id)
     references author(author_id)); 
---2. 시퀀스 만들기
+--2. 시퀀스 만들기--
 create sequence seq_book_id
 increment by 1
 start with 1;
@@ -41,7 +41,7 @@ create sequence seq_author_id
 increment by 1
 start with 1;
 
---3. 데이터 추가하기
+--3. 데이터 추가하기--
 insert into author
 values (seq_author_id.nextval, '김문열', '경북 영양');
 insert into author
@@ -71,7 +71,7 @@ values (seq_book_id.nextval, '오직두사람', '문학동네', '2017-05-04', 6)
 insert into book
 values (seq_book_id.nextval, '26년', '재미주의', '2012-02-04', 5);
 
--- 4. 테이블 출력
+-- 4. 테이블 출력 --
 select  bo.book_id, bo.title, bo.pubs, bo.pub_date, au.author_id, au.author_name, author_desc
 from    book bo, author au
 where   au.author_id = bo.author_id;
@@ -80,7 +80,7 @@ select * from book;
 
 select * from author;
 
--- 5. 정보 변경
+-- 5. 정보 변경 --
 update  author
 set     author_desc = '서울특별시'
 where   author_id = 5;
